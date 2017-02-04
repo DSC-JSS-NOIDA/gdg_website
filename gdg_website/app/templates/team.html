@@ -1,0 +1,23 @@
+{% include "header.html" %}
+
+<center>Team</center>
+{% block content %}
+
+{{ instance.member_name }}<br/>
+{{ instance.status }}<br/>
+{{ instance.email_ID }}<br/>
+{{ instance.facebook_link }}<br/>
+{{ instance.github_link }}<br/>
+{{ instance.twitter_link }}<br/>
+{{ instance.linkedin }}<br/>
+
+{{ instance.position }}<br/>
+{% if instance.image %}
+<img src='{{ instance.image.url }}' />
+{% endif %}
+
+
+{% endblock %}
+
+
+{% include "footer.html" %}
