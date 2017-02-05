@@ -56,3 +56,12 @@ def team(request):
 
 	return render(request,"team.html",context)
 
+
+def project(request):
+	queryset=Project.objects.all()
+	context={
+	      "queryset":queryset,
+	}
+
+	return render(request,"project.html",context)
+

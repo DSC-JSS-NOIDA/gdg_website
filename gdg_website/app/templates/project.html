@@ -1,0 +1,20 @@
+{% include "header.html" %}
+
+<center>Projects</center>
+<br />
+
+
+{% for query in queryset %}
+
+{{ query.project_name }}</a><br />
+{{ query.description }}</a><br/>
+<a href="{{ query.host_link }}">{{ query.host_link }}</a><br/>
+<a href="{{ query.github_link }}">{{ query.github_link }}</a><br/>
+{% if query.image %}
+<img src='{{ query.image.url }}' /><br />
+{% endif %}
+
+
+
+{% endfor %}
+{% include "footer.html" %}
