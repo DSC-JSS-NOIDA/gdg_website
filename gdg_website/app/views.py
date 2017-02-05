@@ -5,14 +5,20 @@ from models import *
 def home(request):
 
 
-	return render(request,'home.html')
+	return render(request,"home.html")
 
 
-def team(request,id=None):
+def team(request):
+	Past = Team.objects.all().filter(status="Past")
+	Current = Team.objects.all().filter(status="Current")
+	Mentor = Team.objects.all().filter(status="Mentor")
 
-	instance = get_object_or_404(Team,id=id)
 	context={
-          "instance":instance,
-    }
+           "Past":Past,
+           "Current":Current,
+           "Mentor":Mentor,
+
+	}
 
 	return render(request,"team.html",context)
+

@@ -1,23 +1,40 @@
 {% include "header.html" %}
 
-<center>Team</center>
-{% block content %}
-
-{{ instance.member_name }}<br/>
-{{ instance.status }}<br/>
-{{ instance.email_ID }}<br/>
-{{ instance.facebook_link }}<br/>
-{{ instance.github_link }}<br/>
-{{ instance.twitter_link }}<br/>
-{{ instance.linkedin }}<br/>
-
-{{ instance.position }}<br/>
-{% if instance.image %}
-<img src='{{ instance.image.url }}' />
-{% endif %}
+<center>Team Members</center>
+Past Members:<br />
 
 
-{% endblock %}
+{% for query in Past %}
+
+{{ query.member_name }}</a><br />
+<a href="https://www.facebook.com/">{{ query.facebook_link }}</a><br/>
+<a href="https://github.com/">{{ query.github_link }}</a><br/>
+<a href="https://twitter.com/">{{ query.twitter_link }}</a><br/>
+<a href="https://www.linkedin.com/in/">{{ query.linkedin_link }}</a><br/><br/>
+
+{% endfor %}
+
+Current Members:<br />
+{% for query in Current %}
+
+{{ query.member_name }}</a><br />
+<a href="https://www.facebook.com/">{{ query.facebook_link }}</a><br/>
+<a href="https://github.com/">{{ query.github_link }}</a><br/>
+<a href="https://twitter.com/">{{ query.twitter_link }}</a><br/>
+<a href="https://www.linkedin.com/in/">{{ query.linkedin_link }}</a><br/><br/>
+
+{% endfor %}
+
+Mentors:<br />
+{% for query in Mentor %}
+
+{{ query.member_name }}</a><br />
+<a href="https://www.facebook.com/">{{ query.facebook_link }}</a><br/>
+<a href="https://github.com/">{{ query.github_link }}</a><br/>
+<a href="https://twitter.com/">{{ query.twitter_link }}</a><br/>
+<a href="https://www.linkedin.com/in/">{{ query.linkedin_link }}</a><br/><br/>
+
+{% endfor %}
 
 
 {% include "footer.html" %}
