@@ -1,0 +1,29 @@
+{% include "header.html" %}
+
+<center>Team</center>
+{% block content %}
+
+{{ instance.event_name }}<br/>
+{{ instance.date_from }}<br/>
+{{ instance.date_to }}<br/>
+{{ instance.venue }}<br/>
+{{ instance.speaker }}<br/>
+{{ instance.event_type }}<br/>
+{{ instance.registration_link }}<br/>
+{{ instance.facebook_link }}<br/>
+{{ instance.description }}<br/>
+{{ instance.contact }}<br/>
+{{ instance.view_count }}<br/>
+
+{% if instance.image %}
+<img src='{{ instance.image.url }}' />
+{% endif %}
+
+
+{% endblock %}
+
+
+{% include "footer.html" %}
+
+  
+

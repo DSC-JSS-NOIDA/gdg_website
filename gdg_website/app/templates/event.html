@@ -1,0 +1,42 @@
+{% include "header.html" %}
+
+<center>Events</center>
+
+
+Ongoing Events:<br />
+{% for query in queryset1 %}
+
+<a href="/event_detail/{{ query.id }}">{{ query.event_name }}</a><br/>
+
+{% if query.image %}
+<img src='{{ query.image.url }}' /><br /><br />
+{% endif %}
+
+{% endfor %}
+
+
+Future Events:<br />
+{% for query in queryset2 %}
+
+<a href="/event_detail/{{ query.id }}">{{ query.event_name }}</a><br/>
+
+{% if query.image %}
+<img src='{{ query.image.url }}' /><br /><br />
+{% endif %}
+
+{% endfor %}
+
+Past Events:<br />
+{% for query in queryset3 %}
+
+<a href="/event_detail/{{ query.id }}">{{ query.event_name }}</a><br/>
+
+{% if query.image %}
+<img src='{{ query.image.url }}' /><br /><br />
+{% endif %}
+
+{% endfor %}
+
+
+
+{% include "footer.html" %}

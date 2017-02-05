@@ -6,8 +6,8 @@ from django.db import models
 # Create your models here.
 class Event(models.Model):
 	event_name=models.CharField(max_length=120)
-	date_from=models.DateField()
-	date_to=models.DateField()
+	date_from=models.DateTimeField()
+	date_to=models.DateTimeField()
 	venue=models.CharField(max_length=120)
 	speaker=models.CharField(max_length=120)
 	event_type=models.CharField(max_length=120)
