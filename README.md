@@ -27,7 +27,7 @@ A website for GDG JSS Noida
 > pip install -r ../requirements.txt
 
 6. Run Migrations
-> python manage.py makemigrations
+> python manage.py makemigrations<br>
 > python manage.py migrate 
 
 7. Create SuperUser
