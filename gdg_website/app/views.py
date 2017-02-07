@@ -4,9 +4,14 @@ import datetime
 
 # Create your views here.
 def home(request):
+	event=Event.objects.all()
+	project=Project.objects.all()
+	context={
+	      "event":event,
+	      "project":project,
+	}
 
-
-	return render(request,"home.html")
+	return render(request,"home.html",context)
 
 
 def event(request):

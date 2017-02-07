@@ -2,4 +2,17 @@
 
 <center>Home</center>
 
+{% for query in event %}
+{{ query.event_name }}
+
+
+{% endfor %}
+
+
+{% for query in project %}
+{{ query.event_name }}
+
+
+{% endfor %}
+
 {% include "footer.html" %}
