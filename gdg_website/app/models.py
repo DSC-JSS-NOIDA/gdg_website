@@ -56,3 +56,29 @@ class Subscriber(models.Model):
 		return self.email_ID
 
 
+class Comment(models.Model):
+	event_ID=models.ForeignKey(Event)
+	name=models.CharField(max_length=120)
+	email_ID=models.EmailField(max_length=120)
+	date=models.DateTimeField()
+	comment=models.TextField()
+
+
+	def __unicode__(self):
+		return self.name
+
+
+class Reply(models.Model):
+	comment_ID=models.ForeignKey(Comment)
+	name=models.CharField(max_length=120)
+	email_ID=models.EmailField(max_length=120)
+	date=models.DateTimeField()
+	reply=models.TextField()
+
+	def __unicode__(self):
+		return self.name	
+
+
+
+
+

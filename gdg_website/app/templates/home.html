@@ -1,18 +1,21 @@
 {% include "header.html" %}
 
 <center>Home</center>
-
+Events:<br />
 {% for query in event %}
-{{ query.event_name }}
+{{ query.event_name }}<br />
+{% if query.image %}
+<img src='{{ query.image.url }}' /><br />
+{% endif %}
 
 
 {% endfor %}
 
+Enter E-mail:<input type="email" placeholder="abc@gmail.com" class="email"><br />
+<input id="subscribe" type="submit" value="Submit" >
+<span class="abc"></span><br /><br />
 
-{% for query in project %}
-{{ query.event_name }}
 
 
-{% endfor %}
 
 {% include "footer.html" %}

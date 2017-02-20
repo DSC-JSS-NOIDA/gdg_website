@@ -14,10 +14,34 @@
 {{ instance.description }}<br/>
 {{ instance.contact }}<br/>
 {{ instance.view_count }}<br/>
+<input type="hidden" name="id" value="{{ instance.id }}" class="abc"/>
 
 {% if instance.image %}
-<img src='{{ instance.image.url }}' />
+	<img src='{{ instance.image.url }}' /><br />
 {% endif %}
+
+{% for comment in comments %}
+	{{ comment.name }}<br />
+	{{ comment.date }}<br />
+	{{ comment.comment }}<br />
+	<span class="btn btn-primary reply-btn" id="{{ comment.id }}">Reply</span>
+	<div class="reply-form" id="{{ comment.id }}">
+		Enter Name:<input type="text" placeholder="abc" class="reply_name" id="{{ comment.id }}"><br />
+		Enter E-mail:<input type="email" placeholder="abc@gmail.com" class="reply_email" id="{{ comment.id }}"><br />
+		Enter Reply:<textarea class="reply" id="{{ comment.id }}"></textarea><br />
+		<input class="reply-submit" type="submit" value="Submit" id="{{ comment.id }}">
+		<span class="pqr"></span><br /><br />
+	</div><br /><br />
+{% endfor %}
+
+
+Enter Name:<input type="text" placeholder="abc" class="name"><br />
+Enter E-mail:<input type="email" placeholder="abc@gmail.com" class="email"><br />
+Enter Comment:<textarea class="comment"></textarea><br />
+<input id="comment" type="submit" value="Submit" >
+<span class="xyz"></span><br /><br />
+
+
 
 
 {% endblock %}
